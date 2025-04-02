@@ -31,7 +31,7 @@ Settings.llm = llm  # 设置默认 LLM 为 DeepSeek
 Settings.embed_model = embed_model  # 设置默认 embedding 模型
 
 # 加载数据
-documents = SimpleDirectoryReader(input_files=["data/wukong.txt"]).load_data() 
+documents = SimpleDirectoryReader(input_files=["data/2024年中国财政政策执行情况报告.txt"]).load_data() 
 
 # 构建索引
 index = VectorStoreIndex.from_documents(
@@ -45,4 +45,4 @@ query_engine = index.as_query_engine(
 )
 
 # 开始问答
-print(query_engine.query("黑神话悟空中有哪些战斗工具?"))
+print(query_engine.query("2024中国的税收总额多少?"))
